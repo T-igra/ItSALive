@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+	<html lang="ru">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>ItSALive Example</title>
+
+	<script src="js/itsalive.min.js"></script>
+</head>
+	<body>
+Не забудьте изменить номера счётчиков на свои!
+
+	<script type="text/javascript">
+(function() {
+	function ItSALive(p, c) {
+		if (new RegExp(p).test(navigator.userAgent)) {
+			c();
+		} else {
+			var d = document;
+
+			function m() {
+				d.body.removeEventListener('mousemove', m);
+				c();
+			}
+
+			d.addEventListener('DOMContentLoaded', function () {
+				d.body.addEventListener('mousemove', m);
+			},false);
+		}
+	}
+
+	new ItSALive('YandexMetrika|24 core|YandexBot|Mail.RU_Bot|bingbot|Googlebot',
+		function () {
+
+			// Yandex.Metrika counter
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter1111111 = new Ya.Metrika({id:1111111,
+								webvisor:true,
+								clickmap:true,
+								trackLinks:true,
+								accurateTrackBounce:true,
+								trackHash:true});
+					} catch(e) { }
+				});
+
+				var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+
+			// google-analytics.com
+			(function () {
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-11111111-1', 'auto');
+				ga('send', 'pageview');
+			})();
+		}
+	);
+})();
+</script>
+		<noscript><div><img src="//mc.yandex.ru/watch/1111111" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	</body>
+</html>
